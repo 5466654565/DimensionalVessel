@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox fx:id="mainContainer" fillWidth="true" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.o.FXMLController">
+    <HBox spacing="10">
+        <TextField fx:id="numberField" promptText="Enter a number" onAction="#handleAddData"/>
+        <Button text="Add Model(s)" onAction="#handleAddData"/>
+        <Button text="Play/Pause" onAction="#handlePlayPause"/>
+        <Button text="Show Visualization" onAction="#showVisualizationWindow"/>
+    </HBox>
+    <TabPane VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="Model">
+                <AnchorPane>
+                    <TableView fx:id="tableViewModel" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
+                        AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                        <columns>
+                            <TableColumn text="CartesianPlaneID" fx:id="cartesianPlaneIDColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="cartesianPlaneID"/>
+                                </cellValueFactory>
+                            </TableColumn>       
+                            <TableColumn text="CartesianPlaneParentID" fx:id="cartesianPlaneParentIDColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="cartesianPlaneParentID"/>
+                                </cellValueFactory>
+                            </TableColumn>         
+                            <TableColumn text="ModelID" fx:id="modelIDColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="modelID"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Category" fx:id="categoryColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="category"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Electronegativity" fx:id="electronegativityColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="electronegativity"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Mass" fx:id="massColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="mass"/>
+                                </cellValueFactory>
+                            </TableColumn>   
+                            <TableColumn text="Radius" fx:id="radiusColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="radius"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Plan">
+                <AnchorPane>
+                    <TableView fx:id="tableViewPlan" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                        <columns>
+                            <TableColumn text="CartesianPlaneID" fx:id="cartesianPlaneIDColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="cartesianPlaneID"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="CartesianPlaneParentID" fx:id="cartesianPlaneParentIDColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="cartesianPlaneParentID"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Generation" fx:id="generationColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="generation"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="ObjectRepresentationID" fx:id="objectRepresentationIDColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="objectRepresentationID"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="GenerationPosition" fx:id="generationPositionColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="generationPosition"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="CumulMass" fx:id="cumulMassColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="cumulMass"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="MaxRadius" fx:id="maxRadiusColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="maxRadius"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Inertia" fx:id="inertiaColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="inertia"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Position" fx:id="positionColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="position"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="AngularPosition" fx:id="angularPositionColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="angularPosition"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Velocity" fx:id="velocityColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="velocity"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="AngularVelocity" fx:id="angularVelocityColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="angularVelocity"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="AngularMomentum" fx:id="angularMomentumColumn">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="angularMomentum"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </AnchorPane>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>
